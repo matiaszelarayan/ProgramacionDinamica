@@ -1,3 +1,33 @@
+# Ventajas y desventajas de usar un framework de JavaScript vs JavaScript nativo
+
+
+### *Ventajas de un framework (como React):*
+- Facilita la creación de interfaces dinámicas y reactivas.
+- Componentización: el código es más modular y reutilizable.
+- Manejo eficiente del DOM (Virtual DOM).
+- Ecosistema grande, muchas librerías y soporte.
+- Mejor organización y escalabilidad en proyectos grandes.
+
+---
+### *Desventajas:*
+- Curva de aprendizaje inicial.
+- Tamaño del bundle (más pesado que JS nativo).
+- Puede ser excesivo para proyectos muy simples.
+- Dependencia de actualizaciones y cambios del framework.
+---
+
+### *JavaScript nativo:*
+- Más liviano, sin dependencias externas.
+- Control total sobre el DOM y el flujo del programa.
+- Ideal para proyectos pequeños o scripts simples.
+---
+
+### *Desventajas de JS nativo:*
+- Más código para lograr interfaces complejas.
+- Difícil de mantener y escalar en proyectos grandes.
+- Menos herramientas para manejo de estado y UI reactiva.
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
