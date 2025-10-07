@@ -1,0 +1,13 @@
+.caja {
+  width: 150px;
+  height: 80px;
+  background: #f1c40f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: background 0.5s;
+}
+.caja.alterno {
+  background: #2ecc71;
+}

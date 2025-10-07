@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cambio de color JS Nativo</title>
+  <style>
+    #caja {
+      width: 150px;
+      height: 80px;
+      background: #f1c40f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      transition: background 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div id="caja">Caja de color</div>
+  <button id="btnColor">Cambiar color</button>
+  <button id="btnOcultar">Ocultar botón color</button>
+  <script>
+    const caja = document.getElementById('caja');
+    const btnColor = document.getElementById('btnColor');
+    const btnOcultar = document.getElementById('btnOcultar');
+    let colorAlterno = false;
+    btnColor.addEventListener('click', () => {
+      colorAlterno = !colorAlterno;
+      caja.style.background = colorAlterno ? '#2ecc71' : '#f1c40f';
+    });
+    btnOcultar.addEventListener('click', () => {
+      btnColor.style.display = btnColor.style.display === 'none' ? 'inline-block' : 'none';
+    });
+  </script>
+</body>
+</html>

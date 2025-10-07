@@ -1,0 +1,8 @@
+.texto {
+  opacity: 1;
+  transition: opacity 0.5s;
+  margin-bottom: 10px;
+}
+.texto.oculto {
+  opacity: 0;
+}

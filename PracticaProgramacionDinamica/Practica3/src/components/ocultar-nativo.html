@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocultamiento JS Nativo</title>
+  <style>
+    #texto {
+      opacity: 1;
+      transition: opacity 0.5s;
+      margin-bottom: 10px;
+    }
+    #texto.oculto {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="texto">Este es un texto que se puede ocultar o mostrar.</div>
+  <button id="btnToggle">Mostrar/Ocultar</button>
+  <script>
+    const texto = document.getElementById('texto');
+    const btnToggle = document.getElementById('btnToggle');
+    let oculto = false;
+    btnToggle.addEventListener('click', () => {
+      oculto = !oculto;
+      texto.className = oculto ? 'oculto' : '';
+    });
+  </script>
+</body>
+</html>

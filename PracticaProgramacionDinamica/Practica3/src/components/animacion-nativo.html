@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Animación JS Nativo</title>
+  <style>
+    #cuadro {
+      width: 50px;
+      height: 50px;
+      background: #3498db;
+      position: relative;
+      left: 0;
+      transition: left 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <button id="btnAnimar">Animar</button>
+  <div id="cuadro"></div>
+  <script>
+    const btn = document.getElementById('btnAnimar');
+    const cuadro = document.getElementById('cuadro');
+    let aLaDerecha = false;
+    btn.addEventListener('click', () => {
+      aLaDerecha = !aLaDerecha;
+      cuadro.style.left = aLaDerecha ? '300px' : '0px';
+    });
+  </script>
+</body>
+</html>
