@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Programación Dinámica
 
 ## 📜 Descripción General de la Asignatura
@@ -73,3 +74,6 @@ Para obtener la nota de cursada, se tendrá en cuenta la **Evaluación permanent
     * [Enlace: `https://eloquentjavascript.net/`](https://eloquentjavascript.net/)
 * **DOM Scripting: Web Design with JavaScript and the Document Object Model** por Jeremy Keith.
     * *Este libro ofrece una introducción detallada al scripting del DOM y cómo utilizarlo para crear sitios web interactivos.*
+=======
+# Programacion Dinamica
+>>>>>>> 9beaef14821d51eb34f4ab571ca39330eeb7dd39
