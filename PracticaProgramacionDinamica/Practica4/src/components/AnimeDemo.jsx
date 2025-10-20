@@ -1,23 +1,42 @@
-import { useEffect, useRef } from 'react';
-import anime from 'animejs/lib/anime.es.js';
+import { useEffect, useRef, useState } from 'react';
+import anime from 'animejs';
 
 export default function AnimeDemo() {
-  const elRef = useRef();
+  const [items, setItems] = useState([1, 2, 3, 4, 5]);
+  const itemRefs = useRef([]);
 
   useEffect(() => {
-    anime({
-      targets: elRef.current,
-      translateX: 250,
-      direction: 'alternate',
-      loop: true,
-      duration: 1200
+    itemRefs.current = itemRefs.current.slice(0, items.length);
+    const tl = anime.timeline({
+      easing: 'easeOutBounce',
+      duration: 800
     });
-  }, []);
+    items.forEach((_, i) => {
+      tl.add({
+        targets: itemRefs.current[i],
+        translateY: [ -100, 0 ],
+        opacity: [0, 1],
+        delay: i * 100
+      }, i * 100);
+    });
+    return () => anime.remove(itemRefs.current);
+  }, [items]);
 
   return (
     <div>
       <h3>Anime.js demo</h3>
-      <div ref={elRef} style={{ width: 50, height: 50, background: '#74b9ff' }}></div>
+      <button onClick={() => setItems(arr => [...arr, arr.length + 1])} style={{marginBottom: 12}}>
+        Agregar elemento
+      </button>
+      <div style={{ display: 'flex', gap: 12 }}>
+        {items.map((item, i) => (
+          <div
+            key={item}
+            ref={el => itemRefs.current[i] = el}
+            style={{ width: 40, height: 40, background: '#74b9ff', borderRadius: 8, opacity: 0 }}
+          >{item}</div>
+        ))}
+      </div>
     </div>
   );
 }
