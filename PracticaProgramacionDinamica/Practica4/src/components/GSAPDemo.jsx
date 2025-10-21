@@ -29,7 +29,7 @@ export default function GSAPDemo() {
   return (
     <div>
       <h3>GSAP demo</h3>
-      <div ref={boxRef} style={{ width: 60, height: 60, background: '#fd79a8', marginBottom: 12 }}></div>
+  <div ref={boxRef} style={{ width: 60, height: 60, background: '#fd79a8', marginBottom: 12, willChange: 'transform, background' }}></div>
       <button onClick={() => setIsAnimating(a => !a)}>
         {isAnimating ? 'Pausar animación' : 'Iniciar animación'}
       </button>

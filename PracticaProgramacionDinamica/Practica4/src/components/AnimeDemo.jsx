@@ -33,7 +33,7 @@ export default function AnimeDemo() {
           <div
             key={item}
             ref={el => itemRefs.current[i] = el}
-            style={{ width: 40, height: 40, background: '#74b9ff', borderRadius: 8, opacity: 0 }}
+            style={{ width: 40, height: 40, background: '#74b9ff', borderRadius: 8, opacity: 0, willChange: 'transform, opacity, background' }}
           >{item}</div>
         ))}
       </div>
