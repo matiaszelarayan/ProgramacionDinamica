@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sección 1 - JS Nativo</title>
+  <style>
+    #caja {
+      width: 150px;
+      height: 150px;
+      background: #b3c6ff;
+      position: relative;
+      transition: background 0.3s, left 0.3s, top 0.3s;
+    }
+    .container {
+      margin: 40px;
+    }
+    .header-nav {
+      background: #e3e3e3;
+      padding: 16px 32px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #b3c6ff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .header-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .header-link:hover {
+      background: #b3c6ff;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <nav class="header-nav">
+    <a href="/" class="header-link">Inicio</a>
+    <a href="/seccion1-react" class="header-link">Sección 1 React</a>
+    <a href="/seccion2-jquery" class="header-link">Sección 2 jQuery</a>
+    <a href="/seccion3-gsap" class="header-link">Sección 3 GSAP</a>
+    <a href="/seccion4-anime" class="header-link">Sección 4 Anime.js</a>
+  </nav>
+  <div class="container">
+    <h2>Manipulación del DOM con JavaScript Nativo</h2>
+    <button id="btn">Cambiar color y posición</button>
+    <div id="caja"></div>
+  </div>
+  <script>
+    const btn = document.getElementById('btn');
+    const caja = document.getElementById('caja');
+    let moved = false;
+    btn.addEventListener('click', () => {
+      if (!moved) {
+        caja.style.background = '#ffb3b3';
+        caja.style.left = '100px';
+        caja.style.top = '50px';
+      } else {
+        caja.style.background = '#b3c6ff';
+        caja.style.left = '0px';
+        caja.style.top = '0px';
+      }
+      moved = !moved;
+    });
+  </script>
+</body>
+</html>

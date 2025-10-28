@@ -1,46 +1,73 @@
-# Trabajo Integrador - Programación Dinámica
+# React + TypeScript + Vite
 
-## Propósito de Enseñanza
-Consolidar los conocimientos adquiridos sobre manipulación del DOM, animaciones y uso de librerías JavaScript, trabajando tanto con JavaScript nativo como con React.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Objetivos de Aprendizaje
-- Usar JavaScript y React para manipular el DOM de manera dinámica.
-- Implementar animaciones avanzadas con GSAP y Anime.js.
-- Integrar librerías como jQuery en un entorno React.
-- Reflexionar sobre las diferencias entre trabajar con tecnologías nativas y las librerías.
+Currently, two official plugins are available:
 
-## Pasos para llevar a cabo la actividad
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Sección 1: Manipulación del DOM
+## React Compiler
 
-#### JavaScript nativo
-- Implementar un botón que cambie el color de fondo y la posición de un elemento del DOM.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-#### React
-- Repetir la misma funcionalidad anterior usando hooks de estado en un componente de React.
+## Expanding the ESLint configuration
 
-### Sección 2: Efectos de Ocultamiento con jQuery
-- Crear una galería de imágenes o una lista de elementos.
-- Permitir mostrar y ocultar los elementos con un botón que utilice jQuery y efectos de transición suave.
-- Integrar esta funcionalidad dentro de un componente React usando useEffect y useRef.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### Sección 3: Animaciones con GSAP
-- Implementar un botón en React que active una animación con GSAP.
-- La animación debe cambiar color, tamaño y posición de un cuadro en secuencia.
-- Controlar la activación/desactivación de la animación con un hook de estado.
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-### Sección 4: Animaciones en Secuencia con Anime.js
-- Generar dinámicamente una lista de elementos a partir de un estado en React.
-- Usar Anime.js para animar los elementos en secuencia, agregando un efecto de rebote al final.
-- Incluir un input que permita al usuario ajustar la velocidad de la animación en tiempo real.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
----
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## Recomendaciones
-- Documentar el código y comentar las partes clave.
-- Comparar y reflexionar sobre las diferencias entre las implementaciones nativas y con librerías.
-- Realizar pruebas de funcionamiento en cada sección.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## Autor
-Trabajo realizado para la materia Programación Dinámica (01266) - Tecnicatura UNNBA.
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
