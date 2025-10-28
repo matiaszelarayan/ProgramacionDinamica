@@ -40,3 +40,45 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Estilos generales para la landing y secciones */
+.section-card {
+  background: #f7f9fc;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 32px;
+  margin: 32px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 8px;
+  color: #3a4a7a;
+}
+
+.section-subtitle {
+  margin-bottom: 24px;
+  font-weight: 400;
+  color: #5a6fa0;
+}
+
+.section-btn {
+  display: block;
+  width: 100%;
+  margin: 16px 0;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  background: #b3c6ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.section-btn:hover {
+  background: #7a9cff;
+  color: #fff;
+}
